@@ -21,7 +21,9 @@ Note: Ideally data source should be on a database where row locking mechanism
 ## HOW TO RUN ##
 ################
 
-php demo.php
+Run the following command in the terminal:
+
+--> php demo.php
 
 The command above will generate streams of orders with random values and do allocation.
 It will print the progress to the screen as in array format and also will log it into logs folder 
@@ -34,7 +36,9 @@ in the main project with current date. Ex: 20160419_allocator.log
 Due to time restrictions, the application is not heavily tested. 
 It requires unit testing, SERIOUSLY. 
 
-test.php
+From terminal:
+
+--> php test.php
 
 It will produce expected output.
 
