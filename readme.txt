@@ -8,7 +8,7 @@ Email: erenbash@gmail.com
 
 A single-threaded application to allocate stream of orders.
 
-Note: Ideally data source should be on a database where row locking mechanism 
+Note: Ideally inventory should be on a database where row locking mechanism 
 (storage engine like innoDB) only allows one transaction at a time and multiple threads can allocate orders.
 
 ##################
