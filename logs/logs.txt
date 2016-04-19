@@ -1,0 +1,33 @@
+######################
+## HOW TO READ LOGS ##
+######################
+
+streamId: id of the stream
+Header: id of the header
+Pre Inventory: inventory before allocation 
+Post Inventory: inventory after allocation
+
+Below is the successful allocation log. Pre and Post Inventory is serialized arrays.
+
+----------------------------------------------------------------------------
+[16:39:25] -> streamId => 1 Header => 5715702d0e0c8
+[16:39:25] -> Pre Inventory => a:5:{s:1:"A";i:43;s:1:"B";i:50;s:1:"C";i:49;s:1:"D";i:47;s:1:"E";i:7;}
+[16:39:25] -> Product => A Quantity => 4
+[16:39:25] -> Product => B Quantity => 5
+[16:39:25] -> Product => D Quantity => 3
+[16:39:25] -> Product => E Quantity => 5
+[16:39:25] -> Post Inventory => a:5:{s:1:"A";i:39;s:1:"B";i:45;s:1:"C";i:49;s:1:"D";i:44;s:1:"E";i:2;}
+[16:39:25] -> Status => Success
+----------------------------------------------------------------------------
+
+Below is an example of invalid order:
+
+----------------------------------------------------------------------------
+[16:39:25] -> streamId => 0 Header => 5715702d0e07f
+[16:39:25] -> Pre Inventory => a:5:{s:1:"A";i:43;s:1:"B";i:50;s:1:"C";i:49;s:1:"D";i:47;s:1:"E";i:11;}
+[16:39:25] -> Product => E Quantity => 3
+[16:39:25] -> Product => G Quantity => 1
+[16:39:25] -> Error => Invalid Order: Product G not found
+[16:39:25] -> Post Inventory => a:5:{s:1:"A";i:43;s:1:"B";i:50;s:1:"C";i:49;s:1:"D";i:47;s:1:"E";i:8;}
+[16:39:25] -> Status => Invalid Order
+----------------------------------------------------------------------------
